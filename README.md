@@ -286,9 +286,9 @@ This portfolio project demonstrates:
 ## 📧 Contact
 
 **Your Name**
-- Email: your.email@example.com
-- LinkedIn: linkedin.com/in/yourprofile
-- Portfolio: yourportfolio.com
+- Email: charankarthiknayakanti@gmail.com
+- LinkedIn: https://www.linkedin.com/in/charankarthiknayakanti/
+- Portfolio: https://www.datascienceportfol.io/CHARANKARTHIKN?preview=True
 
 ## 📄 License
 
