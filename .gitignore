@@ -1,0 +1,21 @@
+# Python local environment
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+env/
+.vscode/
+.idea/
+
+# Data (except folder structure)
+data/*.csv
+data/*.json
+# Keep .gitkeep if it exists, otherwise ignore files within data
+
+# Figures (generated)
+figures/*.png
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
