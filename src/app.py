@@ -57,16 +57,28 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# @st.cache_data
+# def load_data():
+#     """Load A/B test data and results."""
+#     data = pd.read_csv('../data/ab_test_data.csv')
+#     data['session_date'] = pd.to_datetime(data['session_date'])
+    
+#     with open('../data/analysis_results.json', 'r') as f:
+#         results = json.load(f)
+    
+#     return data, results
+
 @st.cache_data
 def load_data():
     """Load A/B test data and results."""
-    data = pd.read_csv('../data/ab_test_data.csv')
+    data = pd.read_csv(DATA_DIR / "ab_test_data.csv")
     data['session_date'] = pd.to_datetime(data['session_date'])
-    
-    with open('../data/analysis_results.json', 'r') as f:
+
+    with open(DATA_DIR / "analysis_results.json", "r") as f:
         results = json.load(f)
-    
+
     return data, results
+
 
 
 def show_executive_summary(results):
@@ -437,7 +449,9 @@ def show_visualizations():
     st.title("📈 Visualizations")
     st.markdown("---")
     
-    figures_dir = Path('../figures')
+    # figures_dir = Path('../figures')
+    figures_dir = FIGURES_DIR
+
     
     if not figures_dir.exists():
         st.error("Figures directory not found. Please run visualization.py first.")
