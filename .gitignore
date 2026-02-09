@@ -19,3 +19,10 @@ figures/*.png
 
 # Jupyter Notebooks
 .ipynb_checkpoints/
+
+# Ignore all CSVs by default
+*.csv
+
+# But allow this specific dataset
+!data/ab_test_data.csv
+
