@@ -6,7 +6,7 @@
 > A complete, production-grade A/B testing project demonstrating rigorous statistical methodology, realistic data simulation, and executive-level reporting for optimizing e-commerce recommendations.
 
 ## 🎯 Project Overview
-
+https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/
 This project simulates and analyzes an A/B test comparing **ML-powered personalized recommendations** against **rule-based recommendations** in an e-commerce setting. It demonstrates end-to-end data science workflow from experimental design through statistical analysis to business recommendations.
 
 ### Business Problem
