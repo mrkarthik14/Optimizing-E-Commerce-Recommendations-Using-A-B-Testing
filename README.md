@@ -3,6 +3,8 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> **[🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/)**
+
 > A complete, production-grade A/B testing project demonstrating rigorous statistical methodology, realistic data simulation, and executive-level reporting for optimizing e-commerce recommendations.
 
 ## 🎯 Project Overview
