@@ -1,0 +1,148 @@
+{
+  "srm": {
+    "control_n": 118793,
+    "treatment_n": 118526,
+    "expected_per_variant": 118659.5,
+    "ratio": 0.9977523928177586,
+    "chi2_statistic": 0.30039314172063764,
+    "p_value": 0.5836360611603522,
+    "srm_detected": false,
+    "passed": true
+  },
+  "covariate_balance": [
+    {
+      "covariate": "segment_new",
+      "control_prop": 0.2996664121216993,
+      "treatment_prop": 0.30267924678530195,
+      "difference": 0.003012834663602637,
+      "p_value": 0.46281111389471596,
+      "balanced": true
+    },
+    {
+      "covariate": "segment_casual",
+      "control_prop": 0.49821148667658055,
+      "treatment_prop": 0.5023687248696206,
+      "difference": 0.004157238193040036,
+      "p_value": 0.3525904740846453,
+      "balanced": true
+    },
+    {
+      "covariate": "segment_power",
+      "control_prop": 0.2021221012017202,
+      "treatment_prop": 0.19495202834507744,
+      "difference": -0.007170072856642756,
+      "p_value": 0.04446591759585905,
+      "balanced": false
+    }
+  ],
+  "primary_metric": {
+    "metric": "converted",
+    "level": "user",
+    "n_control": 24881,
+    "n_treatment": 25119,
+    "rate_control": 0.15123990193320205,
+    "rate_treatment": 0.16401926828297306,
+    "absolute_lift": 0.012779366349771004,
+    "relative_lift": 0.08449731973123899,
+    "relative_lift_pct": 8.4497319731239,
+    "ci_lower": 0.006392680516048001,
+    "ci_upper": 0.019166052183494008,
+    "rel_ci_lower_pct": 4.226847832043324,
+    "rel_ci_upper_pct": 12.672616114204475,
+    "z_statistic": 3.9206216468918584,
+    "p_value": 8.83208381055045e-05,
+    "significant": true,
+    "practical_significance": true
+  },
+  "ctr": {
+    "metric": "clicked_recommendation",
+    "level": "user",
+    "n_control": 24881,
+    "n_treatment": 25119,
+    "rate_control": 0.5414573369237571,
+    "rate_treatment": 0.5512560213384291,
+    "absolute_lift": 0.009798684414672021,
+    "relative_lift": 0.018096872544644784,
+    "relative_lift_pct": 1.8096872544644784,
+    "ci_lower": 0.0010713375484119395,
+    "ci_upper": 0.018526031280932102,
+    "rel_ci_lower_pct": 0.19786185823958924,
+    "rel_ci_upper_pct": 3.421512650689368,
+    "z_statistic": 2.2005151503916,
+    "p_value": 0.027770366231335775,
+    "significant": true,
+    "practical_significance": false
+  },
+  "segmentation": [
+    {
+      "segment": "new",
+      "n_control": 7456,
+      "n_treatment": 7603,
+      "rate_control": 0.06934012875536481,
+      "rate_treatment": 0.06865710903590688,
+      "absolute_lift": -0.0006830197194579307,
+      "relative_lift_pct": -0.9850280518913599,
+      "p_value": 0.8686712706543094,
+      "significant": false
+    },
+    {
+      "segment": "casual",
+      "n_control": 12396,
+      "n_treatment": 12619,
+      "rate_control": 0.14714424007744434,
+      "rate_treatment": 0.16023456692289406,
+      "absolute_lift": 0.013090326845449723,
+      "relative_lift_pct": 8.896255020624713,
+      "p_value": 0.004107524840735843,
+      "significant": true
+    },
+    {
+      "segment": "power",
+      "n_control": 5029,
+      "n_treatment": 4897,
+      "rate_control": 0.28275999204613245,
+      "rate_treatment": 0.3218296916479477,
+      "absolute_lift": 0.03906969960181528,
+      "relative_lift_pct": 13.817265773384602,
+      "p_value": 2.2500707264949682e-05,
+      "significant": true
+    }
+  ],
+  "cuped": {
+    "metric": "revenue",
+    "covariate": "engagement_duration_sec",
+    "theta": -0.0042724891245977765,
+    "variance_original": 1796.2518779228112,
+    "variance_cuped": 1796.151400604133,
+    "variance_reduction_pct": 0.005593721009463926,
+    "control_mean": 14.103555443880863,
+    "treatment_mean": 16.04819925159442,
+    "lift": 1.9446438077135557,
+    "t_statistic": 5.131314855908171,
+    "p_value": 2.887988655653489e-07,
+    "significant": true
+  },
+  "bayesian": {
+    "metric": "converted",
+    "control_rate": 0.15123990193320205,
+    "treatment_rate": 0.16401926828297306,
+    "prob_treatment_better": 0.99995,
+    "expected_loss_treatment": 3.04216337616256e-08,
+    "expected_loss_control": 0.01278975400056356,
+    "control_ci_lower": 0.14684607957383813,
+    "control_ci_upper": 0.155719330725118,
+    "treatment_ci_lower": 0.15950391520555685,
+    "treatment_ci_upper": 0.16868397790802148,
+    "relative_lift_ci_lower_pct": 4.186104624809157,
+    "relative_lift_ci_upper_pct": 12.97036637374509,
+    "decision": "Launch Treatment"
+  },
+  "guardrail_page_load": {
+    "control_mean": 1.2163527585222853,
+    "treatment_mean": 1.3099708311271072,
+    "difference": 0.09361807260482191,
+    "pct_change": 7.696621884473384,
+    "p_value": 2.1681467102203854e-146,
+    "degraded": true
+  }
+}

@@ -12,10 +12,11 @@ env/
 # Data (except folder structure)
 data/*.csv
 data/*.json
+!data/analysis_results.json
 # Keep .gitkeep if it exists, otherwise ignore files within data
 
 # Figures (generated)
-figures/*.png
+# figures/*.png
 
 # Jupyter Notebooks
 .ipynb_checkpoints/
