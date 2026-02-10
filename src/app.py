@@ -18,6 +18,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
+# Define project paths
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT_DIR / "data"
+FIGURES_DIR = ROOT_DIR / "figures"
+
 # Page configuration
 st.set_page_config(
     page_title="A/B Test Dashboard",
