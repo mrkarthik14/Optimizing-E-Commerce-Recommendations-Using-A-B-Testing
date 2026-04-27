@@ -9,7 +9,7 @@
   
 > A production-grade A/B testing suite demonstrating rigorous statistical methodology, realistic data simulation, and executive-level reporting for optimizing e-commerce recommendations.
 
-### [🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/)
+### [🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/) | [📊 Generated Dataset](data/ab_test_data.csv)
 
 ---
 
@@ -158,14 +158,38 @@ Assuming 11,000 DAU, $75 Average Order Value, and a consistent lift:
 
 ---
 
+## 📸 Dashboard Screenshots & Visualizations
+
+### Streamlit Dashboard
+![Executive Summary](figures/Executive%20Summary.png)
+![Statistical Deep Dive](figures/Statistical%20Deep%20Dive.png)
+![Segment Analysis](figures/Segment%20Analysis.png)
+![Guardrail Metrics](figures/Guardrail%20Metrics.png)
+
+### Python Analysis Charts
+<details>
+<summary><b>Click to View Visualizations</b></summary>
+<br>
+
+![Metric Comparison](figures/metric_comparison.png)
+![Confidence Intervals](figures/confidence_intervals.png)
+![Time Series](figures/time_series.png)
+![Segment Heatmap](figures/segment_heatmap.png)
+![Cumulative Conversions](figures/cumulative_conversions.png)
+
+</details>
+
+---
+
 ## 👨‍💻 Contact & Author
 
 This portfolio project demonstrates end-to-end A/B testing methodology, production-quality Python code, and executive communication. 
 
 **Charankarthik Nayakanti**
 - 📧 **Email:** [charankarthiknayakanti@gmail.com](mailto:charankarthiknayakanti@gmail.com)
-- 💼 **LinkedIn:** [charankarthiknayakanti](https://www.linkedin.com/in/charankarthiknayakanti/)
-- 🌐 **Portfolio:** [Data Science Portfolio](https://www.datascienceportfol.io/CHARANKARTHIKN)
+- 💼 **LinkedIn:** [Charan Karthik](https://www.linkedin.com/in/charankarthiknayakanti/)
+- 🐙 **GitHub:** [mrkarthik14](https://github.com/mrkarthik14)
+- 🌐 **Portfolio:** [Charan Karthik Nayakanti](https://charan-karthik-nayakanti-14.netlify.app)
 
 ---
 
