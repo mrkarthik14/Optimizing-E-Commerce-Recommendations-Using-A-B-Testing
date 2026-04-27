@@ -37,27 +37,6 @@ st.markdown("""
     .main {
         padding: 0rem 1rem;
     }
-    .stMetric {
-        background-color: #f0f2f6;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    h1 {
-        color: #1f77b4;
-    }
-    .recommendation-box {
-        padding: 20px;
-        border-radius: 10px;
-        margin: 10px 0;
-    }
-    .go {
-        background-color: #d4edda;
-        border-left: 5px solid #28a745;
-    }
-    .no-go {
-        background-color: #f8d7da;
-        border-left: 5px solid #dc3545;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -98,7 +77,7 @@ def show_executive_summary(results):
     # Decision recommendation
     if pm['significant'] and pm['practical_significance'] and pm['relative_lift'] > 0:
         decision = "✅ GO - Launch Treatment"
-        decision_class = "go"
+        alert_type = "success"
         explanation = """
         **Recommendation: LAUNCH THE TREATMENT**
         
@@ -108,7 +87,7 @@ def show_executive_summary(results):
         """
     elif pm['significant'] and pm['relative_lift'] < 0:
         decision = "❌ NO-GO - Keep Control"
-        decision_class = "no-go"
+        alert_type = "error"
         explanation = """
         **Recommendation: DO NOT LAUNCH**
         
@@ -117,7 +96,7 @@ def show_executive_summary(results):
         """
     else:
         decision = "⚠️ INCONCLUSIVE - Run Longer"
-        decision_class = "no-go"
+        alert_type = "warning"
         explanation = """
         **Recommendation: EXTEND TEST DURATION**
         
@@ -125,8 +104,12 @@ def show_executive_summary(results):
         significance thresholds. Recommend running the test longer.
         """
     
-    st.markdown(f'<div class="recommendation-box {decision_class}"><h2>{decision}</h2>{explanation}</div>', 
-                unsafe_allow_html=True)
+    if alert_type == "success":
+        st.success(f"### {decision}\n{explanation}")
+    elif alert_type == "error":
+        st.error(f"### {decision}\n{explanation}")
+    else:
+        st.warning(f"### {decision}\n{explanation}")
     
     # Key Metrics Row
     st.markdown("### 📊 Key Performance Indicators")

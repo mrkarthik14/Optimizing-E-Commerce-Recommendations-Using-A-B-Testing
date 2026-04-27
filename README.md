@@ -1,44 +1,75 @@
-# A/B Testing Project: E-Commerce Recommendation Optimization
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Live-brightgreen?style=for-the-badge&logo=appveyor" alt="Status" />
+  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License" />
+</div>
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# 🚀 A/B Testing Project: E-Commerce Recommendation Optimization
+  
+> A production-grade A/B testing suite demonstrating rigorous statistical methodology, realistic data simulation, and executive-level reporting for optimizing e-commerce recommendations.
 
-> **[🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/)**
+### [🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/)
 
-> A complete, production-grade A/B testing project demonstrating rigorous statistical methodology, realistic data simulation, and executive-level reporting for optimizing e-commerce recommendations.
+---
+
+## 📖 Table of Contents
+- [🎯 Project Overview](#-project-overview)
+- [📊 Key Results](#-key-results)
+- [🏗️ System Architecture](#️-system-architecture)
+- [🚀 Quick Start](#-quick-start)
+- [📈 Statistical Methodology](#-statistical-methodology)
+- [🎯 Business Impact & Strategy](#-business-impact--strategy)
+- [📧 Contact & Author](#-contact--author)
+
+---
 
 ## 🎯 Project Overview
-This project simulates and analyzes an A/B test comparing **ML-powered personalized recommendations** against **rule-based recommendations** in an e-commerce setting. It demonstrates end-to-end data science workflow from experimental design through statistical analysis to business recommendations.
 
+An e-commerce platform aims to replace its rule-based recommendation engine with an **ML-powered personalized recommendation system**. This project simulates the A/B test and provides a comprehensive analysis workflow to support the final launch decision.
 
-### Business Problem
+**Key Objectives:**
+- **Primary KPI:** Conversion Rate (Target: +5% relative lift)
+- **Secondary KPIs:** Click-Through Rate (CTR), Revenue Per User
+- **Guardrail Metrics:** Page load time, User engagement
 
-An e-commerce platform wants to replace its rule-based recommendation engine with ML-powered personalized recommendations to improve:
-- **Primary KPI:** Conversion Rate (target: +5% relative lift)
-- **Secondary KPIs:** Click-Through Rate, Revenue Per User
-- **Guardrails:** Page load time, user engagement
-
-### Hypothesis
-
-ML-powered personalized recommendations will increase conversion rate by at least 5% relative lift compared to rule-based recommendations, without degrading user experience.
+---
 
 ## 📊 Key Results
 
-| Metric | Control | Treatment | Lift | Significance |
-|--------|---------|-----------|------|--------------|
-| **Conversion Rate** | 15.12% | 16.40% | **+8.45%** | ✅ p<0.001 |
-| Click-Through Rate | 17.70% | 18.61% | +5.14% | ✅ p<0.001 |
-| Page Load Time | 1.216s | 1.310s | +7.70% | ⚠️ Degraded |
+> **Executive Recommendation:** ✅ **LAUNCH** with parallel performance optimization.
 
-**Bayesian Analysis:** 99.99% probability that treatment is superior
+| Metric | Control (Rule-based) | Treatment (ML-based) | Lift | Statistical Significance |
+| :--- | :--- | :--- | :--- | :--- |
+| **Conversion Rate** | 15.12% | 16.40% | 🟢 **+8.45%** | ✅ p < 0.001 |
+| **Click-Through Rate** | 17.70% | 18.61% | 🟢 **+5.14%** | ✅ p < 0.001 |
+| **Page Load Time** | 1.216s | 1.310s | 🔴 **+7.70%** | ⚠️ Degraded |
 
-**Recommendation:** ✅ **LAUNCH** with performance optimization
+*Bayesian Analysis indicates a **99.99% probability** that the treatment variant is superior.*
 
-**Estimated Impact:** $XX,XXX additional annual revenue
+---
 
-## 🏗️ Project Structure
+## 🏗️ System Architecture
 
+The project is structured into four core components, ensuring modularity, scalability, and reproducibility:
+
+```mermaid
+graph TD
+    A[data_generation.py] -->|Synthetic Data| B(ab_test_data.csv)
+    B --> C[statistical_tests.py]
+    B --> D[visualization.py]
+    C -->|Results| E(analysis_results.json)
+    D -->|Charts| F(figures/*.png)
+    B --> G[app.py]
+    E --> G
+    F --> G
+    G -->|Streamlit App| H((Interactive Dashboard))
 ```
+
+<details>
+<summary><b>📂 View Project Structure</b></summary>
+
+```text
 ab_testing_project/
 ├── src/
 │   ├── data_generation.py      # Realistic A/B test data simulation
@@ -46,41 +77,36 @@ ab_testing_project/
 │   ├── visualization.py        # Executive-ready visualizations
 │   └── app.py                  # Interactive Streamlit dashboard
 ├── data/
-│   ├── ab_test_data.csv       # Generated dataset (237K sessions, 50K users)
-│   └── analysis_results.json  # Statistical test results
+│   ├── ab_test_data.csv        # Generated dataset (237K sessions, 50K users)
+│   └── analysis_results.json   # Statistical test results
 ├── figures/                    # Generated visualizations
-│   ├── metric_comparison.png
-│   ├── confidence_intervals.png
-│   ├── time_series.png
-│   ├── segment_heatmap.png
-│   ├── guardrail_distribution.png
-│   └── cumulative_conversions.png
-├── docs/
-│   ├── experiment_plan.md           # Experimental design document
-│   ├── statistical_methodology.md   # Statistical approach documentation
-│   └── final_report.md              # Executive summary report
-├── README.md                   # This file
+├── docs/                       # Project documentation
+├── README.md                   # Project overview
 └── requirements.txt            # Python dependencies
 ```
+</details>
+
+---
 
 ## 🚀 Quick Start
 
-### Installation
+### 1. Installation
+
+Clone the repository and install the required dependencies:
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/ab-testing-project.git
-cd ab-testing-project
-
-# Install dependencies
+git clone https://github.com/mrkarthik14/mrkarthik14-Optimizing-E-Commerce-Recommendations-Using-A-B-Testing.git
+cd mrkarthik14-Optimizing-E-Commerce-Recommendations-Using-A-B-Testing
 pip install -r requirements.txt
 ```
 
-### Running the Analysis
+### 2. Execution Pipeline
+
+Execute the pipeline sequentially to generate data, analyze, and visualize:
 
 ```bash
-# 1. Generate synthetic A/B test data
 cd src
+# 1. Generate synthetic A/B test data
 python data_generation.py
 
 # 2. Run statistical analysis
@@ -93,210 +119,54 @@ python visualization.py
 streamlit run app.py
 ```
 
-The dashboard will open at `http://localhost:8501`
-
-## 📁 Components
-
-### 1. Data Generation (`data_generation.py`)
-
-Simulates realistic A/B test data with:
-- ✅ 50,000 users over 3 weeks
-- ✅ User segmentation (new, casual, power users)
-- ✅ Temporal patterns (weekend effects, novelty decay)
-- ✅ Segment-specific treatment effects
-- ✅ Realistic noise and variance
-- ✅ Guardrail metric trade-offs
-
-**Output:** `ab_test_data.csv` (237,319 sessions)
-
-### 2. Statistical Analysis (`statistical_tests.py`)
-
-Comprehensive testing framework:
-- ✅ Sample size calculation (power analysis)
-- ✅ Sample Ratio Mismatch (SRM) check
-- ✅ Covariate balance verification
-- ✅ Two-sample proportion tests with confidence intervals
-- ✅ Segmentation analysis
-- ✅ CUPED variance reduction
-- ✅ Bayesian A/B testing
-- ✅ Guardrail metric evaluation
-
-**Output:** `analysis_results.json`
-
-### 3. Visualizations (`visualization.py`)
-
-Executive-ready charts:
-- ✅ Metric comparison plots
-- ✅ Confidence interval visualizations
-- ✅ Time series analysis
-- ✅ Segment performance heatmaps
-- ✅ Guardrail metric distributions
-- ✅ Cumulative conversion curves
-
-**Output:** PNG files in `figures/`
-
-### 4. Interactive Dashboard (`app.py`)
-
-Multi-page Streamlit application:
-- 📊 **Executive Summary:** Go/No-Go recommendation, ROI estimate
-- 📈 **Statistical Analysis:** Detailed test results, SRM checks, Bayesian analysis
-- 🎯 **Segment Analysis:** Treatment effects by user cohort
-- 🚧 **Guardrail Metrics:** Performance impact assessment
-- 📊 **Visualizations:** Interactive charts and graphs
-
-## 📈 Methodology
-
-### Experimental Design
-
-- **Randomization:** Stratified by user segment (50-50 split)
-- **Sample Size:** 50,000 users (powered for 5% MDE at 80% power)
-- **Duration:** 3 weeks (21 days)
-- **Analysis Level:** User-level (to account for repeat users)
-
-### Statistical Approach
-
-**Frequentist:**
-- Two-sample proportion test for conversion rate
-- 95% confidence intervals
-- α = 0.05 significance threshold
-- Bonferroni correction for multiple comparisons
-
-**Bayesian:**
-- Beta-Binomial conjugate priors
-- 95% credible intervals
-- Decision threshold: P(treatment > control) > 0.95
-
-**Variance Reduction:**
-- CUPED methodology using pre-experiment covariates
-- ~XX% variance reduction achieved
-
-### Validity Checks
-
-✅ Sample Ratio Mismatch: p=0.584 (PASSED)
-✅ Covariate Balance: All segments balanced
-✅ Temporal Stability: Effects consistent over time
-
-## 🎯 Business Impact
-
-### Recommended Action
-
-**✅ LAUNCH with Performance Optimization**
-
-The treatment demonstrates:
-- Strong statistical evidence (p<0.001)
-- Practical significance (8.45% > 5% MDE)
-- High Bayesian confidence (99.99%)
-
-However, page load time degradation requires attention.
-
-### Revenue Impact
-
-Assuming:
-- Daily active users: ~11,000
-- Annual users: ~4,000,000
-- Average order value: $75
-
-**Projected Impact:**
-- Additional conversions: ~51,200/year
-- Revenue increase: ~$3,840,000/year
-
-### Rollout Strategy
-
-1. **Phase 1 (Month 1):** Launch to Power users only (+13.8% lift, proven segment)
-2. **Phase 2 (Month 2):** Expand to Casual users (+8.9% lift, large segment)
-3. **Phase 3 (Month 3):** Full rollout after performance optimization
-4. **Optimization:** Parallel workstream to reduce page load time by 50%
-
-## 🔬 Key Insights
-
-### Segment Analysis
-
-| Segment | Lift | Significance | Interpretation |
-|---------|------|--------------|----------------|
-| Power   | +13.8% | ✅ Significant | **Best performing** - prioritize this segment |
-| Casual  | +8.9% | ✅ Significant | Large volume, strong lift |
-| New     | -1.0% | ❌ Not Significant | No effect, needs investigation |
-
-**Insight:** Power users benefit most from personalization, likely due to richer interaction history.
-
-### Trade-Offs
-
-✅ **Pros:**
-- Significant conversion lift
-- Revenue positive
-- Works well for 70% of user base
-
-⚠️ **Cons:**
-- +7.7% page load time increase
-- No benefit for new users
-- Requires ML infrastructure
-
-## 🔄 Next Steps
-
-### Technical Optimizations
-
-1. **Performance:**
-   - Implement server-side caching (target: -50% load time)
-   - Pre-compute recommendations for returning users
-   - Optimize ML model inference
-
-2. **New User Experience:**
-   - Investigate why new users don't benefit
-   - Develop cold-start algorithms
-   - A/B test hybrid approach (rules + ML)
-
-3. **Monitoring:**
-   - Real-time performance dashboards
-   - Automated alerting on metric degradation
-   - Continuous learning pipeline
-
-### Future Experiments
-
-1. **Recommendation Display:** Test different layouts, counts, positions
-2. **Personalization Depth:** Test varying levels of personalization
-3. **Multi-Armed Bandits:** Dynamic allocation to best-performing variants
-4. **Long-term Effects:** 6-month cohort analysis for customer lifetime value
-
-## 📚 References
-
-### Statistical Methods
-- Kohavi, R., Tang, D., & Xu, Y. (2020). *Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing*
-- Deng, A., Xu, Y., Kohavi, R., & Walker, T. (2013). "Improving the Sensitivity of Online Controlled Experiments by Utilizing Pre-Experiment Data"
-
-### Tools & Libraries
-- Python 3.8+
-- pandas, numpy, scipy
-- matplotlib, seaborn
-- streamlit (dashboard)
-
-## 👨‍💻 About This Project
-[🔴 Live Streamlit Demo](https://optimizing-e-commerce-recommendations-using-a-b-testing-4yq3zq.streamlit.app/)
-
-This portfolio project demonstrates:
-- ✅ End-to-end A/B testing methodology
-- ✅ Production-quality code with documentation
-- ✅ Statistical rigor (frequentist + Bayesian)
-- ✅ Business-focused insights
-- ✅ Executive communication
-- ✅ Realistic data simulation
-
-**Applicable to:**
-- E-commerce platforms (Amazon, eBay, Shopify)
-- Content recommendations (Netflix, YouTube, Spotify)
-- Product features (Microsoft 365, Xbox, Azure)
-- Marketing campaigns (Bing Ads, LinkedIn)
-
-## 📧 Contact
-
-**Your Name**
-- Email: charankarthiknayakanti@gmail.com
-- LinkedIn: https://www.linkedin.com/in/charankarthiknayakanti/
-- Portfolio: https://www.datascienceportfol.io/CHARANKARTHIKN?preview=True
-
-## 📄 License
-
-MIT License - see LICENSE file for details
+*The Streamlit dashboard will be automatically served at `http://localhost:8501`.*
 
 ---
 
-**Note:** This is a synthetic demonstration project for portfolio purposes. All data is simulated and does not represent any real company.
+## 📈 Statistical Methodology
+
+Our approach ensures robust and trustworthy experiment results by employing industry-standard statistical rigor.
+
+### Experimental Design
+- **Randomization:** Stratified by user segment (50-50 split).
+- **Sample Size:** 50,000 users (Powered for 5% Minimum Detectable Effect at 80% power).
+- **Duration:** 3 weeks (21 days) to capture weekly seasonality.
+
+### Rigorous Analysis
+1. **Frequentist Approach:** Two-sample proportion test with 95% confidence intervals and Bonferroni correction.
+2. **Bayesian Approach:** Beta-Binomial conjugate priors with a decision threshold of `P(treatment > control) > 0.95`.
+3. **Variance Reduction:** CUPED methodology applied using pre-experiment covariates to reduce variance and increase sensitivity.
+4. **Validity Checks:**
+   - Sample Ratio Mismatch (SRM) Check: `p = 0.584` (Passed)
+   - Covariate Balance Verification (Passed)
+
+---
+
+## 🎯 Business Impact & Strategy
+
+Based on the statistical analysis, rolling out the ML-powered recommendation engine is projected to yield significant revenue uplift.
+
+### 💰 Estimated ROI
+Assuming 11,000 DAU, $75 Average Order Value, and a consistent lift:
+- **Projected Conversions:** +51,200 annually.
+- **Projected Revenue Uplift:** **~$3.84 Million / year**.
+
+### 🚀 Recommended Rollout Plan
+1. **Phase 1 (Month 1):** Launch to **Power Users** (+13.8% lift observed).
+2. **Phase 2 (Month 2):** Expand to **Casual Users** (+8.9% lift observed).
+3. **Phase 3 (Month 3):** Broad rollout, concurrent with engineering efforts to reduce page load latency.
+
+---
+
+## 👨‍💻 Contact & Author
+
+This portfolio project demonstrates end-to-end A/B testing methodology, production-quality Python code, and executive communication. 
+
+**Charankarthik Nayakanti**
+- 📧 **Email:** [charankarthiknayakanti@gmail.com](mailto:charankarthiknayakanti@gmail.com)
+- 💼 **LinkedIn:** [charankarthiknayakanti](https://www.linkedin.com/in/charankarthiknayakanti/)
+- 🌐 **Portfolio:** [Data Science Portfolio](https://www.datascienceportfol.io/CHARANKARTHIKN)
+
+---
+
+> *Built with ❤️ by Charankarthik Nayakanti. Data is synthetic and for demonstration purposes.*
